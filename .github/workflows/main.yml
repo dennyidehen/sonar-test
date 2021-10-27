@@ -38,7 +38,7 @@ jobs:
       #veracode test action
       #------------
       - name: Bundle Artifacts for SAST Scan
-        run: zip -r my-service.zip .
+        run: zip -r my-service.zip public src package-lock.json package.json yarn.lock
 
       - name: Veracode Upload And Scan
         # You may pin to the exact commit or the version.
