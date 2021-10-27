@@ -50,7 +50,7 @@ jobs:
           # createprofile
           createprofile: true
           # filepath
-          filepath: my_service.zip
+          filepath: 'my_service.zip'
           # version
           version: ${{ github.run_id }}
           # vid
