@@ -1,0 +1,8 @@
+.cred {
+    display: flex;
+    flex-direction: column;
+}
+ .cred img {
+     width: 100px;
+     border-radius: 50%;
+ }
