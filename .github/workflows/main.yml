@@ -48,7 +48,7 @@ jobs:
           # appname
           appname: ${{ github.repository }}
           # createprofile
-          createprofile: true
+          createprofile: 'true'
           # filepath
           filepath: my-service.zip
           # version
@@ -58,28 +58,29 @@ jobs:
           # vkey
           vkey: ${{ secrets.VERACODE_API_SECRET }}
           # true or flase
-          createsandbox: true
+          createsandbox: 'true'
           sandboxname: develop-${{ github.run_id }}
-          scantimeout: 30
+          #scantimeout: 30
+          criticality: 'VeryHigh'
           
         #Remove bundle after scan
       - name: Remove scanned Artifact
         run: rm my-service.zip
         
         #Remove sandbox after scan
-      - name: Remove Veracode Sandbox
-        uses: ./.github/actions/veracode-sandbox-cleaner
-        with:
+      ##- name: Remove Veracode Sandbox
+        ##uses: ./.github/actions/veracode-sandbox-cleaner
+        ##with:
           # ID of the application in the Veracode, can be retrieved from the URL
           # e.g. for URL https://analysiscenter.veracode.com/auth/index.jsp#HomeAppProfile:424242:123456
           # the ID is the 2nd block of digits, in particular - 123456
-          veracode-app-id: 1274516
+          ##veracode-app-id: 1274516
 
           # global secrets
-          veracode-api-id: ${{ secrets.VERACODE_API_ID }}
-          veracode-api-secret: ${{ secrets.VERACODE_API_SECRET }}
+          ##veracode-api-id: ${{ secrets.VERACODE_API_ID }}
+          ##veracode-api-secret: ${{ secrets.VERACODE_API_SECRET }}
 
           # name of the sandbox used on the 'scan' step
-          sandbox-name: develop-${{ github.run_id }}
+          ##sandbox-name: develop-${{ github.run_id }}
 
 
