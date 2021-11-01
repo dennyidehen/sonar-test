@@ -48,7 +48,7 @@ jobs:
           # appname
           appname: ${{ github.repository }}
           # createprofile
-          createprofile: 'true'
+          createprofile: true
           # filepath
           filepath: my-service.zip
           # version
@@ -58,10 +58,10 @@ jobs:
           # vkey
           vkey: ${{ secrets.VERACODE_API_SECRET }}
           # true or flase
-          createsandbox: 'true'
+          createsandbox: true
           sandboxname: develop-${{ github.run_id }}
-          #scantimeout: 30
-          criticality: 'VeryHigh'
+          scantimeout: 50
+          criticality: VeryHigh
           
         #Remove bundle after scan
       - name: Remove scanned Artifact
