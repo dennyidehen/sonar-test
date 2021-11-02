@@ -50,7 +50,7 @@ jobs:
           # true or flase
           createsandbox: true
           sandboxname: develop-${{ github.run_id }}
-          scantimeout: 50
+          #scantimeout: 50
           criticality: VeryHigh
           
         #Remove bundle after scan
