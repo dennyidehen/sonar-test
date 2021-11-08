@@ -37,8 +37,6 @@ jobs:
         with:
           # appname
           appname: ${{ github.repository }}
-          # createprofile
-          createprofile: true
           # filepath
           filepath: my-service.zip
           # version
@@ -50,7 +48,7 @@ jobs:
           # true or flase
           createsandbox: true
           sandboxname: develop-${{ github.run_id }}
-          #scantimeout: 50
+          scantimeout: 60
           criticality: VeryHigh
           
         #Remove bundle after scan
