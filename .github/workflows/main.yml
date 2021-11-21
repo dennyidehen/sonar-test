@@ -55,8 +55,8 @@ jobs:
           # vkey
           vkey: ${{ secrets.VERACODE_API_SECRET }}
           # true or flase
-          #createsandbox: true
-          #sandboxname: develop-${{ github.run_id }}
+          createsandbox: true
+          sandboxname: develop-${{ github.run_id }}
           scantimeout: 60
           criticality: VeryHigh
           
