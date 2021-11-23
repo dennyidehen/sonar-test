@@ -14,9 +14,16 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
+      #- run:
+      #    name: "Veracode Scan Status"
+      #   command: ./veracode-scan.sh $VERACODE_API_ID $VERACODE_API_SECRET "Verademo" "/home/circleci/repo/target/Verademo.war" build_name_number
       - run:
-          name: "Veracode Scan Status"
-          command: ./veracode-scan.sh $VERACODE_API_ID $VERACODE_API_SECRET "Verademo" "/home/circleci/repo/target/Verademo.war" build_name_number
+          name: Bundle Artifacts for SAST Scan
+          command: zip -r my-service.zip public src package-lock.json package.json yarn.lock
+
+      - run:
+          name: Remove scan artifact
+          command: rm my-service.zip
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
