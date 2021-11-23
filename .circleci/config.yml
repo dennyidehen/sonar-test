@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "Veracode Scan Status"
-          command: ./veracode-scan.sh $VERACODE_API_ID $VERACODE_API_SECRET "Verademo" "/home/circleci/repo/target/Verademo.war" build_name_number
+          command: veracode-scan.sh $VERACODE_API_ID $VERACODE_API_SECRET "Verademo" "/home/circleci/repo/target/Verademo.war" build_name_number
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
